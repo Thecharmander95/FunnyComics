@@ -1,3 +1,43 @@
-// Place all the styles related to the sites controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1,h2,h3,h4,h5,h6,h7{
+  color: coral;
+}
+
+body {
+  background-color: darkslategrey;
+}
+
+p{
+  color: red;
+}
+
+a{
+  color: lightblue;
+}
+
+.topnav a{
+  float: left;
+  color: red;
+  text-alingn: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav{
+  backgrund-color: red;
+  overflow: hidden
+}
+
+.topnav a:hover{
+  background-color: #00ff0a;
+  color: #ffffff;
+}
+.topnav a.active{
+  background-color: red;
+  color: black;
+}
+
+li{
+    color: magenta;
+    size: b4;
+}

@@ -4,4 +4,11 @@ class SitesController < ApplicationController
 
   def about
   end
+
+  def comics
+  end
+
+  def prices
+  end
+
 end
