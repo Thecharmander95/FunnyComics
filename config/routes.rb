@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'sites#home'
   get :about, to: 'sites#about'
-  get :comics, to: "sites#comics"
-  get :prices, to: 'sites#prices'
+  get :year, to: "sites#year"
+  get :yeard, to: 'sites#yeard'
 end

@@ -5,10 +5,10 @@ class SitesController < ApplicationController
   def about
   end
 
-  def comics
+  def year
   end
 
-  def prices
+  def yeard
   end
 
 end

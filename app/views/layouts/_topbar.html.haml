@@ -1,0 +1,5 @@
+.topnav
+  = link_to 'Home', root_path, class: is_active?('sites', 'home')
+  = link_to '2019', year_path, class: is_active?('sites', 'year')
+  = link_to '2020', yeard_path, class: is_active?('sites', 'yeard')
+  = link_to 'About', about_path, class: is_active?('sites', 'about')
