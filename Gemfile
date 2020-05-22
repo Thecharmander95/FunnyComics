@@ -31,6 +31,13 @@ gem 'haml-rails', '~> 2.0.1'
 
 gem 'devise'
 
+# Use ActiveStorage variant
+gem 'mini_magick', '~> 4.8'
+gem 'image_processing'
+gem "aws-sdk-s3", require: false
+
+gem 'hirb'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

@@ -1,4 +1,9 @@
-%p Comics name = #{@comic.title}
-%p Comics decrpition = #{@comic.decrpition}
-%p Comics by = #{@comic.by}
+%p Comic's name = #{@comic.title}
+%p Comic's decrpition = #{@comic.decrpition}
+%p Comic's by = #{@comic.by}
+%p Comic's siries = #{@comic.siries}
+%p Comic's number (if in a siries) = #{@comic.number}
+-  if @comic.picture.attached?
+  = image_tag @comic.picture, class: "small"
+  
 = link_to "back", comics_path
