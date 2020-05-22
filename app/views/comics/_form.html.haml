@@ -1,0 +1,28 @@
+- if @comic.errors.any?
+  %h2 The following errors prevented the comic from saving:
+  %ul
+    - @comic.errors.full_messages.each do |msg|
+      %li= msg
+= form_for @comic do |f|
+  %p
+    = f.label :Title
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :Decrpition
+    %br/
+    = f.text_area :decrpition
+  %p
+    = f.label :By
+    %br/
+    =f.text_field :by
+  %p
+    = f.label :Is_it_in_a_siries_if_in_a_siries_which_one?
+    %br/
+    = f.text_field :siries
+  %p
+    = f.label :If_in_a_siries_what_number?
+    %br/
+    = f.text_field :number
+  %p
+    = f.submit

@@ -1,0 +1,27 @@
+%h1 Comics
+%table
+  %thead
+    %tr
+      %th Name
+      %th Decrpition
+      %th By
+      %th Siries
+      %th Number if in a Siries
+      %th Show
+      %th Edit
+      %th Destroy
+  %tbody
+    - @comics.each do |comic|
+      %tr
+        %td= comic.title
+        %td= comic.decrpition
+        %td= comic.by
+        %td= comic.siries
+        %td= comic.number
+        %td= link_to 'Show', comic
+        %td= link_to 'Edit', edit_comic_path(comic)
+        %td= link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New', new_comic_path
+%br/
+= link_to "Back", root_path
