@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'html2haml'
 gem 'haml-rails', '~> 2.0.1'
 
+gem 'devise'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

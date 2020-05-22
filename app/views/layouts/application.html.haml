@@ -2,13 +2,18 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title FunnyComics
+    %title Funny Comics
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': true
   %body
     %br/
-    = render "layouts/topbar"
+    .grid-container
+      = render "layouts/topbar"
+      - flash.each do |name, msg|
+        %ul
+          %li= msg
+    %br/
     .grid-container
       = yield

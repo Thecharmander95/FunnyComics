@@ -1,5 +1,6 @@
 class ComicsController < ApplicationController
   before_action :set_comic, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user_on, only: [:edit, :new, :destroy, :update, :create]
 
   def index
     @comics = Comic.all
