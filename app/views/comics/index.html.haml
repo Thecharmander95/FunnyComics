@@ -1,34 +1,41 @@
 %h1 Comics
-%table
-  %thead
-    %tr
-      %th Name
-      %th Decrpition
-      %th By
-      %th Siries
-      %th Number if in a Siries
-      %th Picture
-      %th Show
-      - if user_signed_in?
-        %th Edit
-        %th Destroy
-  %tbody
-    - @comics.each do |comic|
-      %tr
-        %td= comic.title
-        %td= comic.decrpition
-        %td= comic.by
-        %td= comic.siries
-        %td= comic.number
-        %td
-          -  if comic.picture.attached?
-            = image_tag comic.picture, class: "small"
-        %td= link_to 'Show', comic
-        - if user_signed_in?
-          %td= link_to 'Edit', edit_comic_path(comic)
-          %td= link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' }
+- @comics.each do |comic|
+  .callout
+    Name of comic =
+    = comic.title
+    %br/
+    Decrpition =
+    = comic.decrpition
+    %br/
+    By =
+    = comic.by
+    %br/
+    - if comic.siries == ""
+      Not in a siries
+    - else
+      Sirires that the comic is in =
+      = comic.siries
+    %br/
+    - if comic.number == "0"
+      Comic has no number because its not in a siries.
+    - else
+      Comics siries number =
+      = comic.number
+    %br/
+    -  if comic.picture.attached?
+      Comics picture
+      %br/
+      = image_tag comic.picture, class: "small"
+    - else
+      This comic has no picture
+    %br/
+    = link_to "Show", comic_path(comic)
+    %br/
+    - if user_signed_in?
+      = link_to "Edit", edit_comic_path(comic)
+      = link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 - if user_signed_in?
-  = link_to 'New', new_comic_path
+  = link_to 'New', new_comic_path, class: "button"
 %br/
-= link_to "Back", root_path
+= link_to "Back", root_path, class: "button"

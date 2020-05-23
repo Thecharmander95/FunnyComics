@@ -1,9 +1,33 @@
-%p Comic's name = #{@comic.title}
-%p Comic's decrpition = #{@comic.decrpition}
-%p Comic's by = #{@comic.by}
-%p Comic's siries = #{@comic.siries}
-%p Comic's number (if in a siries) = #{@comic.number}
+%p
+  Name of comic =
+  = @comic.title
+%p
+  Decrpition =
+  = @comic.decrpition
+%p
+  By =
+  = @comic.by
+%p
+  - if @comic.siries == ""
+    Not in a siries
+  - else
+    Sirires that the comic is in =
+    = @comic.siries
+%p
+  - if @comic.number == "0"
+    Comic has no number because its not in a siries.
+  - else
+    Comics siries number =
+    = @comic.number
 -  if @comic.picture.attached?
+  %p Comics picture
   = image_tag @comic.picture, class: "small"
-  
-= link_to "back", comics_path
+- else
+  This comic has no picture
+%br/
+- if user_signed_in?
+  = link_to "Edit", edit_comic_path(@comic)
+  %br/
+  = link_to 'Destroy', @comic, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to "back", comics_path, class: "button"

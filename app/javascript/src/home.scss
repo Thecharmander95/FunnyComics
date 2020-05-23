@@ -13,3 +13,30 @@ p {
 .small {
   height: 100px
 }
+
+a.button {
+    background-color: yellow;
+    color: red;
+}
+
+a {
+    color: red;
+}
+
+a.button:hover {
+    background-color: coral;
+    color: red;
+}
+
+input.button {
+  background-color: yellow;
+  color: orangered;
+}
+
+input.button:hover {
+    background-color: coral;
+    color: red;
+}
+input:visited {
+    color: orange;
+}

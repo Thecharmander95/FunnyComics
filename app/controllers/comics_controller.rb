@@ -39,6 +39,7 @@ class ComicsController < ApplicationController
   def destroy
     @comic.destroy
     flash[:notice] = "Comic was destoryed"
+    redirect_to comics_path
   end
 
   private
