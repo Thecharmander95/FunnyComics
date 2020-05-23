@@ -24,7 +24,11 @@
     = f.label :If_in_a_siries_what_number?
     %br/
     (If not in a siries put a zero.)
-    = f.text_field :number
+    = f.number_field :number
+  %p
+    = f.label :Price
+    %br/
+    = f.number_field :price, step: 0.01
   %span.picture
     (THERE MUST BE A PICTURE!!!)
     = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'

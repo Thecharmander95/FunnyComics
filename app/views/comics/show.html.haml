@@ -19,6 +19,10 @@
   - else
     Comics siries number =
     = @comic.number
+%p
+  Comics Price =
+  %br/
+  = @comic.price
 -  if @comic.picture.attached?
   %p Comics picture
   = image_tag @comic.picture, class: "small"
