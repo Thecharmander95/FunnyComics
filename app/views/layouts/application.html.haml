@@ -8,12 +8,10 @@
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': true
   %body
-    %br/
-    .grid-container
-      = render "layouts/topbar"
-      - flash.each do |name, msg|
-        %ul
-          %li= msg
+    = render "layouts/topbar"
+    - flash.each do |name, msg|
+      %ul
+        %li= msg
     %br/
     .grid-container
       = yield
